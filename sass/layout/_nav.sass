@@ -1,0 +1,58 @@
+.nav
+    +responsive(phone)
+        display: none
+    ul
+        display: flex
+        align-items: center
+        justify-content: center
+    li
+        list-style: none
+        margin: 0 2rem
+    a
+        text-decoration: none
+        font-size: 1.3rem
+        letter-spacing: .1rem
+        color: $clr-white
+            
+    img
+        width: 25rem
+
+#phone-nav
+    display: none
+    position: fixed
+    bottom: -150px
+    left: 0
+    right: 0
+    background-color: $clr-black
+    padding: 4rem 0 2.2rem 0
+    text-align: center
+    border-top: solid 2px $clr-white
+    transition: all .2s ease-in-out
+    z-index: 2
+    +responsive(phone)
+        display: block
+
+    &.reveal
+        bottom: 0px
+
+    li
+        list-style: none
+        &:not(:last-child)
+            margin-bottom: 1.5rem
+    a
+        text-decoration: none
+        color: $clr-white
+        letter-spacing: .7rem
+
+    .phone-nav-toggle
+        position: absolute
+        color: white
+        background-color: $clr-black
+        display: inline-block
+        padding: .8rem 0
+        letter-spacing: 1rem
+        border: solid 2px $clr-white
+        padding: 1rem 2.5rem 1rem 3.5rem
+        top: -23px
+        left: 50%
+        transform: translateX(-50%)

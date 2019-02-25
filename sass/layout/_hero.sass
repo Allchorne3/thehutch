@@ -1,0 +1,35 @@
+#hero
+    height: 100vh
+    +fullBg("heroBG")
+    position: relative
+    z-index: 2
+
+    +responsive(phone)
+        height: 100vh
+
+    .hero-title
+        +limitWidth($width-small)
+        color: $clr-white
+        text-align: center
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        text-shadow: 0 0 .5rem $clr-black
+
+        +responsive(tabletLand)
+            font-size: 5rem
+
+        +responsive(phone)
+            font-size: 4rem
+
+    .phone-nav-logo
+        display: none
+        position: absolute
+        top: 3rem
+        left: 50%
+        transform: translateX(-50%)
+        width: 60%
+
+        +responsive(phone)
+            display: block

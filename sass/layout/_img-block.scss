@@ -1,0 +1,45 @@
+#img-block {
+    z-index: 2;
+    padding: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+        "one two"
+        "one three";  
+
+    @include responsive(tabletLand) {
+        height: 70rem;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: 
+        "two three"
+        "one one"
+        "one one"; 
+    }
+
+    @include responsive(phone) {
+        height: 70rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr 1fr;
+        grid-template-areas: 
+        "two"
+        "one"
+        "three"; 
+    }
+
+    .block-img-1 {
+        grid-area: one; 
+        @include fullBg(hutch3)   
+    }
+
+    .block-img-2 {
+        grid-area: two;
+        @include fullBg(hutch4)  
+    }
+
+    .block-img-3 {
+        grid-area: three;
+        @include fullBg(hutch5) 
+    }
+}

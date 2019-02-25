@@ -1,0 +1,41 @@
+@mixin responsive($breakpoint)
+    @if $breakpoint == tabletLand
+        @media screen and (max-width: 1024px)
+            @content
+    
+    @if $breakpoint == tabletPort
+        @media screen and (max-width: 900px)
+            @content
+
+    @if $breakpoint == phone
+        @media screen and (max-width: 600px)
+            @content
+
+@mixin limitWidth($width)
+    max-width: $width
+    width: 100%
+    margin: 0 auto 1rem
+
+@mixin fullBg($image, $position: center)
+    background: 
+        image: url("../img/#{$image}.jpg")
+        size: cover
+        position: $position
+
+@mixin fullBgOverlay($image, $position: center)
+    background: 
+        image: linear-gradient(rgba($clr-black, .7), rgba($clr-black, .7)),url("../img/#{$image}.jpg")
+        size: cover
+        position: $position
+
+@mixin btn
+    background-color: $clr-black
+    color: $clr-white
+    padding: 1rem 2rem
+    display: inline-block
+    transition: all .2s ease-in-out
+
+    &:hover
+        cursor: pointer
+        transform: translateY(-.4rem)
+        box-shadow: 0 .3rem .5rem rgba($clr-black, .3)

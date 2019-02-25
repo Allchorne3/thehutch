@@ -1,0 +1,25 @@
+#img-block {
+  background-color: blue;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: (1fr)[2];
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "one two" "one three"; }
+  #img-block .block-img-1 {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: one;
+    background-color: red; }
+  #img-block .block-img-2 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: two;
+    background-color: blue; }
+  #img-block .block-img-3 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: three;
+    background-color: green; }
