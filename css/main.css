@@ -130,6 +130,8 @@ p {
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%); }
+    #phone-nav .phone-nav-toggle:hover {
+      cursor: pointer; }
 
 #hero {
   height: 100vh;
