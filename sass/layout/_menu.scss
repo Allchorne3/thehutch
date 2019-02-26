@@ -36,6 +36,10 @@
         margin-bottom: 2.5rem;
     }
 
+    .menu-item {
+        margin-bottom: 2rem
+    }
+
     @supports (display: grid) {
         .menu-items {
             display: grid;
@@ -91,9 +95,6 @@
         }
     }
 
-    @supports not (display: grid) {
-        
-    }
     .menu-download {
         @include btn
     }
