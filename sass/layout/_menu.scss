@@ -36,59 +36,64 @@
         margin-bottom: 2.5rem;
     }
 
-    .menu-items {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 5rem;
-        text-align: left;
-        @include responsive(tabletLand) {
-            grid-gap: 1rem;
+    @supports (display: grid) {
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 5rem;
+            text-align: left;
+            @include responsive(tabletLand) {
+                grid-gap: 1rem;
+            }
+            
+            @include responsive(phone) {
+                grid-template-columns: 1fr;
+                margin-bottom: 4rem;
+            }
         }
+
+        .menu-item {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            grid-template-rows: auto 1fr;
+            grid-template-areas: 
+                "item-name          price"
+                "description             .";
+            margin-bottom: 10rem;
+            
+            @include responsive(tabletLand) {
+                margin-bottom: 5rem;
+                grid-template-columns: 4fr 1fr;
+            }        
+        }
+
+        .item-name {
+            grid-area: item-name;
+            font: {
+                size: 1.8rem;
+                weight: $fw-semi-bold;
+            }
+        }
+
+        .item-price {
+            grid-area: price;
+            font-weight: $fw-light;
+            padding-left: 1rem;
+        }
+
+        .item-description {
+            grid-area: description;
+            line-height: 1.2;
+            font: {
+                size: 1.4rem;
+                weight: $fw-extra-light;
+            }
+        }
+    }
+
+    @supports not (display: grid) {
         
-        @include responsive(phone) {
-            grid-template-columns: 1fr;
-            margin-bottom: 4rem;
-        }
     }
-
-    .menu-item {
-        display: grid;
-        grid-template-columns: 3fr 1fr;
-        grid-template-rows: auto 1fr;
-        grid-template-areas: 
-            "item-name          price"
-            "description             .";
-        margin-bottom: 10rem;
-        
-        @include responsive(tabletLand) {
-            margin-bottom: 5rem;
-            grid-template-columns: 4fr 1fr;
-        }        
-    }
-
-    .item-name {
-        grid-area: item-name;
-        font: {
-            size: 1.8rem;
-            weight: $fw-semi-bold;
-        }
-    }
-
-    .item-price {
-        grid-area: price;
-        font-weight: $fw-light;
-        padding-left: 1rem;
-    }
-
-    .item-description {
-        grid-area: description;
-        line-height: 1.2;
-        font: {
-            size: 1.4rem;
-            weight: $fw-extra-light;
-        }
-    }
-
     .menu-download {
         @include btn
     }
